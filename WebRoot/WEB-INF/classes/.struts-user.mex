@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="dang-user" location="216,128" size="170,813">
+    <action name="regist" location="10,20" size="150,41">
+      <result name="verify" />
+      <result name="regist">
+        <resourceEdge source="regist" routing="0" target="register_form.jsp" />
+      </result>
+      <result name="success" />
+    </action>
+    <action name="verify" location="10,120" size="150,41">
+      <result name="main" />
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="verify_form.jsp" />
+      </result>
+    </action>
+    <action name="checkEmail" location="10,220" size="150,62">
+      <result name="success" />
+      <result name="fail" />
+    </action>
+    <action name="checkCode" location="10,320" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="checkNumber" location="10,420" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="validateEmail" location="10,520" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="registOK" location="10,620" size="150,41">
+      <result name="registOK">
+        <resourceEdge source="registOK" routing="0" target="register_ok.jsp" />
+      </result>
+    </action>
+    <action name="login" location="0,0" size="0,0">
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="login_form.jsp" />
+      </result>
+      <result name="fail">
+        <resourceEdge source="fail" routing="0" target="login_form.jsp" />
+      </result>
+      <result name="verify" />
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="verify_form.jsp" path="/user/verify_form.jsp" location="500,50" size="150,55" />
+  <webResource name="register_ok.jsp" path="/user/register_ok.jsp" location="500,200" size="150,55" />
+  <webResource name="main.jsp" path="/main/main.jsp" location="50,350" size="150,55" />
+  <webResource name="login_form.jsp" path="/user/login_form.jsp" location="200,350" size="150,55" />
+  <webResource name="register_form.jsp" path="/WEB-INF/user/register_form.jsp" location="0,0" size="0,0" />
+  <webResource name="verify_form.jsp" path="/WEB-INF/user/verify_form.jsp" location="0,0" size="0,0" />
+  <webResource name="register_ok.jsp" path="/WEB-INF//user/register_ok.jsp" location="0,0" size="0,0" />
+  <webResource name="login_form.jsp" path="/WEB-INF/user/login_form.jsp" location="0,0" size="0,0" />
+  <webResource name="register_ok.jsp" path="/WEB-INF/user/register_ok.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

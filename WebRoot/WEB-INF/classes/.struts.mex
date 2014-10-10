@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="dang-default" location="10,25" size="170,70" />
+  <include file="struts-user.xml" location="265,10" size="150,30" />
+  <include file="struts-order.xml" location="20,185" size="150,30" />
+  <include file="struts-cart.xml" location="265,185" size="150,30" />
+  <include file="struts-main.xml" location="20,290" size="150,30" />
+</Struts2Diagram>
+

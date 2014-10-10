@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="dang-user" namespace="/user" extends="dang-default">
+		<!-- 用户模块的Action定义 -->
+		<action name="regist" class="org.tarena.dang.action.user.RegistAction">
+			<result name="verify" type="redirectAction">verify</result>
+			<result name="regist">/WEB-INF/user/register_form.jsp</result>
+			<result type="redirectAction">regist!form</result>
+		</action>
+		<action name="verify" class="org.tarena.dang.action.user.VerifyAction">
+			<interceptor-ref name="checkStack"></interceptor-ref>
+			<result name="main" type="redirectAction">../main/main</result>
+			<result name="success">/WEB-INF/user/verify_form.jsp</result>
+		</action>
+		<action name="checkEmail" class="org.tarena.dang.action.user.CheckEmailAction">
+			<interceptor-ref name="checkStack"></interceptor-ref>
+			<result name="success" type="redirectAction">registOK</result>
+			<result name="fail" type="chain">verify</result>
+		</action>
+		<action name="checkCode"
+			class="org.tarena.dang.action.user.CreateCheckCodeAction">
+			<result name="success" type="stream">
+				<param name="inputName">input</param>
+				<param name="contentType">image/jpeg</param>
+			</result>
+		</action>
+		<action name="checkNumber" class="org.tarena.dang.action.user.CheckNumberAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="validateEmail" class="org.tarena.dang.action.user.ValidateEmailAction">
+			<result type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="registOK" class="org.tarena.dang.action.user.RegistOKAction">
+			<interceptor-ref name="checkStack"></interceptor-ref>
+			<result name="registOK">
+				/WEB-INF/user/register_ok.jsp
+		</result>
+		</action>
+		<action name="login" class="org.tarena.dang.action.user.LoginAction">
+			<result name="login">/WEB-INF/user/login_form.jsp</result>
+			<result name="fail">/WEB-INF/user/login_form.jsp</result>
+			<result name="verify" type="redirectAction">verify</result>
+			<result name="success" type="redirectAction">../main/main</result>
+		</action>
+	</package>
+</struts>

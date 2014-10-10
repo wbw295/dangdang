@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="dang-order" location="10,10" size="171,571">
+    <action name="orderInfo" location="11,20" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="order_info.jsp" />
+      </result>
+      <result name="main" />
+    </action>
+    <action name="addressForm" location="11,120" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="address_form.jsp" />
+      </result>
+    </action>
+    <action name="initAddress" location="11,220" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="loadAddress" location="11,320" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="orderOk" location="11,420" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="order_ok.jsp" />
+      </result>
+    </action>
+    <action name="orderSubmit" location="11,520" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="orderList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="order_list.jsp" />
+      </result>
+    </action>
+    <action name="orderLook" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="order_look.jsp" />
+      </result>
+    </action>
+    <action name="deleteOrder" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="payOrder" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="order_info.jsp" path="/WEB-INF/order/order_info.jsp" location="201,50" size="150,55" />
+  <webResource name="address_form.jsp" path="/WEB-INF/order/address_form.jsp" location="501,50" size="150,55" />
+  <webResource name="order_ok.jsp" path="/WEB-INF/order/order_ok.jsp" location="51,200" size="150,55" />
+  <webResource name="order_list.jsp" path="/WEB-INF/order/order_list.jsp" location="0,0" size="0,0" />
+  <webResource name="order_look.jsp" path="/WEB-INF/order/order_look.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

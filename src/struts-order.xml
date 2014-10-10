@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="dang-order" namespace="/order" extends="dang-default">
+		<!-- 订单模块的Action定义 -->
+		<action name="orderInfo" class="org.tarena.dang.action.order.OrderInfoAction">
+			<interceptor-ref name="checkStack"></interceptor-ref>
+			<result>/WEB-INF/order/order_info.jsp</result>
+			<result name="main" type="redirectAction">../main/main</result>
+		</action>
+		<action name="addressForm">
+			<interceptor-ref name="checkStack"></interceptor-ref>
+			<result>/WEB-INF/order/address_form.jsp</result>
+		</action>
+		<action name="initAddress" class="org.tarena.dang.action.order.LoadAddressAction"
+			method="init">
+			<result type="json"></result>
+		</action>
+		<action name="loadAddress" class="org.tarena.dang.action.order.LoadAddressAction"
+			method="load">
+			<result type="json"></result>
+		</action>
+		<action name="orderOk" class="org.tarena.dang.action.order.OrderOkAction">
+			<interceptor-ref name="checkStack"></interceptor-ref>
+			<result>/WEB-INF/order/order_ok.jsp</result>
+		</action>
+		<action name="orderSubmit" class="org.tarena.dang.action.order.OrderOkAction"
+			method="submit">
+			<interceptor-ref name="checkStack"></interceptor-ref>
+			<result type="redirectAction">orderOk</result>
+			<result name="main" type="redirectAction">../main/main</result>
+		</action>
+		<action name="orderList" class="org.tarena.dang.action.order.OrderListAction">
+			<interceptor-ref name="checkStack"></interceptor-ref>
+			<result>/WEB-INF/order/order_list.jsp</result>
+		</action>
+		<action name="orderLook" class="org.tarena.dang.action.order.OrderLookAction">
+			<interceptor-ref name="checkStack"></interceptor-ref>
+			<result>/WEB-INF/order/order_look.jsp</result>
+		</action>
+		<action name="deleteOrder" class="org.tarena.dang.action.order.DeleteOrderAction">
+			<result type="redirectAction">orderList</result>
+		</action>
+		<action name="payOrder" class="org.tarena.dang.action.order.PayOrderAction">
+			<result type="json"></result>
+		</action>
+	</package>
+</struts>
